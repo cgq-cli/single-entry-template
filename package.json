@@ -1,7 +1,9 @@
 {
-  "name": "vue-simple",
-  "version": "0.1.0",
-  "private": true,
+  "name": "<%=projectName%>",
+  "version": "1.0.0",
+  "private": "<%=private%>",
+  "autor":"<%=author%>",
+  "description": "<%=description%>",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
