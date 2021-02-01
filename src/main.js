@@ -1,10 +1,10 @@
 // import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from '@/router/index'
 import FastClick from 'fastclick' // 解决300ms点击延迟
 import store from '@/store/index.js'
 import mixins from '@/mixins'
-import '@/plugins/axios'
+import '@/request/axios'
 import VConsole from 'vconsole'
 import apis from '@/apis'
 import { date, validate, util, widget } from '@/utils'
