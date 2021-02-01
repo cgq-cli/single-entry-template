@@ -1,7 +1,9 @@
 {
-  "name": "uni-patient-view",
+  "name": "<%=projectName%>",
   "version": "1.0.0",
-  "private": false,
+  "private": "<%=private%>",
+  "autor":"<%=author%>",
+  "description": "<%=description%>",
   "npminstall": "true",
   "scripts": {
     "serve": "vue-cli-service serve",
