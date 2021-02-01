@@ -1,6 +1,4 @@
 const CompressionPlugin = require('compression-webpack-plugin')
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-// const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const externals = {
     'vue': 'Vue',    
@@ -21,7 +19,6 @@ module.exports = {
             return {
                 externals: externals,
                 plugins: [
-                    // new BundleAnalyzerPlugin(),
                     new CompressionPlugin({
                         test: /\.js$|\.html$|.\css/,
                         threshold: 10240, //对超过10k的数据压缩
@@ -54,19 +51,6 @@ module.exports = {
         }
     },
     chainWebpack: config => {
-        /**
-         * 添加CDN参数到htmlWebpackPlugin配置中， 详见public/index.html 修改
-         */
-        // config.plugin('html').tap(args => {
-        //     console.log(args, '33333')
-        //     if (process.env.NODE_ENV === 'production') {
-        //         args[0].cdn = cdn.build
-        //     }
-        //     // if (process.env.NODE_ENV === 'development') {
-        //     // args[0].cdn = cdn.dev
-        //     // }
-        //     return args
-        // })
         let arr = ['vue-modules', 'vue', 'normal-modules', 'normal']
         arr.forEach(match => {
             config.module
