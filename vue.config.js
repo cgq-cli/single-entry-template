@@ -15,12 +15,6 @@ const externals = {
 module.exports = {
     publicPath: './',
     outputDir: './dockerfiles/dist',
-    // outputDir: './dockerfiles/dist/hljpt', // 为了解决小程序缓存导致的问题，所以单独建个目录，改变路由达到清缓存的目的（目前仅黑龙江平台用到）
-    // pluginOptions: {
-    //     autoRouting: {
-    //         chunkNamePrefix: 'page-'
-    //     }
-    // },
 
     configureWebpack: () => {
         if (process.env.NODE_ENV === 'production') {
@@ -44,20 +38,6 @@ module.exports = {
                 }
             }
         }
-    },
-    pages: {
-        h5: {          
-            entry: 'src/views/h5/main.js',          
-            template: 'public/h5.html',
-            chunks: ['chunk-vendors', 'chunk-common', 'h5'],
-            title: '加载中'
-        },        
-        admin: {          
-            entry: 'src/views/admin/main.js',          
-            template: 'public/admin.html',        
-            chunks: ['chunk-vendors', 'chunk-common', 'admin'],
-            title: '加载中'
-        },
     },
     css: {
         loaderOptions: {
