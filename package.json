@@ -1,27 +1,74 @@
 {
-  "name": "<%=projectName%>",
+  "name": "uni-patient-view",
   "version": "1.0.0",
-  "private": "<%=private%>",
-  "autor":"<%=author%>",
-  "description": "<%=description%>",
+  "private": false,
+  "npminstall": "true",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "docs:build": "vuepress build docs",
+    "docs:dev": "vuepress dev docs",
+    "analyzer": "cross-env use_analyzer=true npm run build"
   },
   "dependencies": {
-    "vue": "^2.6.10"
+    "babel-plugin-import": "^1.13.0",
+    "better-scroll": "^1.15.2",
+    "core-js": "^3.6.4",
+    "element-ui": "^2.13.2",
+    "fastclick": "^1.0.6",
+    "jsbarcode": "^3.11.3",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.13.1",
+    "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
+    "vant-green": "^1.0.38",
+    "vue-router-layout": "^0.1.2",
+    "vuex": "^3.0.1",
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
-    "@vue/cli-service": "^3.11.0",
-    "vue-template-compiler": "^2.6.10"
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.2.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@vue/cli-plugin-babel": "~4.2.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-plugin-unit-mocha": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "@vue/eslint-config-prettier": "^4.0.1",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-component": "^1.1.1",
+    "babel-plugin-import": "^1.12.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-polyfill": "^6.26.0",
+    "chai": "^4.1.2",
+    "compression-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.2",
+    "deepmerge": "^4.0.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "lint-staged": "^8.1.5",
+    "postcss-adaptive": "^0.5.0",
+    "sass": "^1.22.9",
+    "sass-loader": "^7.1.0",
+    "vue-auto-routing": "^0.3.0",
+    "vue-cli-plugin-auto-routing": "^0.2.1",
+    "vue-cli-plugin-axios": "^0.0.4",
+    "vue-cli-plugin-fontawesome": "^0.2.0",
+    "vue-template-compiler": "^2.5.21",
+    "vuepress": "^0.14.11",
+    "webpack-bundle-analyzer": "^3.6.1"
   },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
 }

@@ -1,0 +1,26 @@
+
+/* reset */
+ul,
+li {
+    list-style: none;
+}
+
+/* vant-green */
+
+.van-color-primary {
+    color: #1C97FC !important;
+}
+
+/* element */
+
+.el-scrollbar__wrap {
+  overflow-x: hidden;
+}
+
+/* admin */
+
+.home {
+    .el-input__suffix {
+        right: 12px !important;
+    }
+}
